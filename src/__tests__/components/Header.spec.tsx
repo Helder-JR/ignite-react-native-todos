@@ -3,23 +3,23 @@ import { Header } from '../../components/Header';
 import { render } from '@testing-library/react-native';
 
 describe('Header', () => {
-  it('should be able to render tasks counter correctly', async () => {
-    let mockedTasksCounter = 0;
+	it('should be able to render tasks counter correctly', async () => {
+		let mockedTasksCounter = 0;
 
-    const { getByText, rerender } = render(<Header tasksCounter={mockedTasksCounter} />);
+		const { getByText, rerender } = render(<Header tasksCounter={mockedTasksCounter} />);
 
-    expect(getByText('0 tarefas'));
+		expect(getByText('0 tarefas'));
 
-    mockedTasksCounter = 1;
+		mockedTasksCounter = 1;
 
-    rerender(<Header tasksCounter={mockedTasksCounter} />);
-    
-    expect(getByText('1 tarefa'));
+		rerender(<Header tasksCounter={mockedTasksCounter} />);
 
-    mockedTasksCounter = 2;
+		expect(getByText('1 tarefa'));
 
-    rerender(<Header tasksCounter={mockedTasksCounter} />);
-    
-    expect(getByText('2 tarefas'));
-  });
+		mockedTasksCounter = 2;
+
+		rerender(<Header tasksCounter={mockedTasksCounter} />);
+
+		expect(getByText('2 tarefas'));
+	});
 });
